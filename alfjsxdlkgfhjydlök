@@ -1,0 +1,41 @@
+[33mcommit 98b90740e40279aed898c4ef4aff51a010231f84[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mtopic-skill-d[m[33m, [m[1;32mfeature/topic-skill-data-managent[m[33m, [m[1;32mfeature/topic-skill-d[m[33m)[m
+Author: Moju666 <xblauerstern@gmail.com>
+Date:   Thu Jul 17 13:32:59 2025 +0200
+
+    Added the skills test data.
+
+[33mcommit 5846344c3a27594bdb0159683d82cf9527f21451[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Moju666 <xblauerstern@gmail.com>
+Date:   Thu Jul 17 12:12:08 2025 +0200
+
+    Added teh skills test data
+
+[33mcommit 8b54df6fb0c0d5d21b282e4b8bc96b7375b67e61[m
+Author: Moju666 <xblauerstern@gmail.com>
+Date:   Wed Jul 16 10:47:06 2025 +0200
+
+    PLPG-API-5: Added to pics date objects t the corresponding json file.
+
+[33mcommit 8beabecb4bc9b5e9e1b3768b585b24d9413fe263[m
+Author: Moju666 <xblauerstern@gmail.com>
+Date:   Wed Jul 16 10:33:42 2025 +0200
+
+    PLPG-API-4: Implemented the basic flask app.
+
+[33mcommit 4740c9b2a1d0e1b804c7fe7e4ac4c2cf17051b3d[m
+Author: Moju666 <xblauerstern@gmail.com>
+Date:   Wed Jul 16 09:37:29 2025 +0200
+
+    Added requirements.txt with the of project dependencies.
+
+[33mcommit fc94cbb303ba7ecf9a7aadb1cbdc824781c973a4[m
+Author: Moju666 <xblauerstern@gmail.com>
+Date:   Mon Jul 14 13:13:50 2025 +0200
+
+    Füge 'my_tool' zur .gitignore hinzu
+
+[33mcommit 6e21ba14dd69fb54c4dcaa9ba0e157bafc94a9aa[m
+Author: Moju666 <xblauersternx@gmail.com>
+Date:   Mon Jul 14 11:09:29 2025 +0200
+
+    Initial commit
