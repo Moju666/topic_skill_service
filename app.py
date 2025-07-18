@@ -8,6 +8,7 @@ data_manager = JsonDataManager()
 
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 TOPICS_FILE = os.path.join(DATA_DIR, 'topics.json')
+SKILLS_FILSE = os.path.join(DATA_DIR, 'skills.json')
 
 
 @app.route('/')
@@ -19,6 +20,13 @@ def hello_world():
 def get_topics():
     topics = data_manager.read_data(TOPICS_FILE)
     return jsonify(topics)
+
+
+@app.route('/skills', methods=['GET'])
+def get_skills():
+    skills = data_manager.read_data(SKILLS_FILSE)
+    return jsonify(skills)
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
