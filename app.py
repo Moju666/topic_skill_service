@@ -28,5 +28,16 @@ def get_skills():
     return jsonify(skills)
 
 
+@app.route('/topics/<id>', methods=['GET'])
+def get_topic_by_id(id):
+    topics =data_manager.read_data(TOPICS_FILE)
+    found_topics =[t for t in topics if t ['id'] == id]
+    topics = found_topics[0] if found_topics else None
+
+    #topics = data_manager.read_data(TOPICS_FILE)
+    #topic = [t for t in topics if t['id'] == id][0] #es gibt nur eine Liste daher Null 
+    #topic = next((topic for topic in topics if topic.get('id') == id), None)
+    return jsonify(topic)
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
