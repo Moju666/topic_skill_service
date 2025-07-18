@@ -1,5 +1,6 @@
 import os
-from flask import Flask, jsonify
+import uuid
+from flask import Flask, jsonify, request
 from data_manager import JsonDataManager
 
 app = Flask(__name__)
@@ -40,12 +41,34 @@ def get_topic_by_id(id):
 
 @app.route('/skills/<id>', methods=['GET'])
 def get_skill_by_id(id):
-    skills = data_manager.read_data(SKILLS_FILE)
+    skills = data_manager.read_data(SKILLS_FILSE)
     skill = next((skill for skill in skills if skill.get('id').lower() == id.lower()), None)
     if skill:
         return jsonify(skill)
     else:
         return jsonify({"error": "Skill not found."}), 404
+
+@app.route('/topics' , methods=['POST'])
+def create_topic():
+    new_topic_data = request.json
+
+
+    if not new_topic_data or 'name' not in new_topic_data or 'description' not in new_topic_data:
+        return jsonify({"error": "'name' and 'descriotion' for the topic are required."}),400
+    new_topic_id = str(uuid.uuid4())
+
+    topic = {
+
+    "id": new_topic_id, 
+    "name": new_topic_data['name'],
+    "description":new_topic_data['description']
+}   
+
+    topics = data_manager.read_data(TOPICS_FILE)
+    topics.append(topic)
+
+    data_manager.write_data(TOPICS_FILE, topics)
+    return jsonify(topic), 201
 
 
 
