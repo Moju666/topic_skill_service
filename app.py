@@ -30,14 +30,24 @@ def get_skills():
 
 @app.route('/topics/<id>', methods=['GET'])
 def get_topic_by_id(id):
-    topics =data_manager.read_data(TOPICS_FILE)
-    found_topics =[t for t in topics if t ['id'] == id]
-    topics = found_topics[0] if found_topics else None
+    topics = data_manager.read_data(TOPICS_FILE)
+    topic = next((topic for topic in topics if topic.get('id').lower() == id.lower()), None)
+    if topic:
+        return jsonify(topic)
+    else:
+        return jsonify({"error": "Topic not found."}), 404
 
-    #topics = data_manager.read_data(TOPICS_FILE)
-    #topic = [t for t in topics if t['id'] == id][0] #es gibt nur eine Liste daher Null 
-    #topic = next((topic for topic in topics if topic.get('id') == id), None)
-    return jsonify(topic)
+
+@app.route('/skills/<id>', methods=['GET'])
+def get_skill_by_id(id):
+    skills = data_manager.read_data(SKILLS_FILE)
+    skill = next((skill for skill in skills if skill.get('id').lower() == id.lower()), None)
+    if skill:
+        return jsonify(skill)
+    else:
+        return jsonify({"error": "Skill not found."}), 404
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
